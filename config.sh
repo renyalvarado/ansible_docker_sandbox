@@ -1,0 +1,2 @@
+export MAX_ANSIBLE_NODES=2
+
