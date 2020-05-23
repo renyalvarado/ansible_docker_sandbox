@@ -2,10 +2,8 @@ version: "3"
 
 services:
     ubuntussh:
-#        image: ubuntusshsimple:latest
         build: ./ubuntussh
     ansiblelocal:
-#        image: ansiblelocal:latest
         build: ./ansible
         environment:
             - MAX_ANSIBLE_NODES=${MAX_ANSIBLE_NODES}
