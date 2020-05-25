@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+    <machine2>{{ ansible_host }}</machine2>
+    <info01>{{ myinfo01 }}</info01>
+    <info01>{{ myinfo02 }}</info01>
+</data>

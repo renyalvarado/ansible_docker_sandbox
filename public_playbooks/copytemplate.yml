@@ -1,0 +1,16 @@
+---
+- hosts: "{{ target_hosts | default('all') }}"
+  tasks:
+    - name: Include vars per environment
+      include_vars:
+        file: "data/{{ myenv }}_data.yml"
+
+    - name: Include vars per host
+      include_vars:
+        file: "data/{{ myenv }}_{{ ansible_host }}_data.yml"
+
+    - name: copy template to servers
+      template:
+        src: mydata.xml
+        dest: /etc/myconf.xml
+        mode: "0544"
