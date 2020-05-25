@@ -35,9 +35,28 @@ sandboxdocker_ubuntussh_1 | SUCCESS => {
 }
 ```
 
+## Running a playbook
+```console
+user@machine:~$ docker exec -t sandboxdocker_ansiblelocal_1 /bin/sh -c 'ansible-playbook public_playbooks/test_connection.yml'
+```
+
+## Running a playbook (verbose)
+```console
+user@machine:~$ docker exec -t sandboxdocker_ansiblelocal_1 /bin/sh -c 'ansible-playbook public_playbooks/test_connection.yml -v'
+```
+
+## Running a playbook with variables
+```console
+user@machine:~$ docker exec -t sandboxdocker_ansiblelocal_1 /bin/sh -c 'ansible-playbook public_playbooks/test_connection.yml -v --extra-vars "target_hosts=sandboxdocker_ubuntussh_2"'
+```
+
 ## References
 * [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
 * [Enable Root Login via SSH In Ubuntu](https://www.liquidweb.com/kb/enable-root-login-via-ssh/)
 * [3 Steps to Perform SSH Login Without Password Using ssh-keygen & ssh-copy-id](https://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/)
 * [Install specific version of Ansible (2.3.1.0) on Ubuntu 18.04 LTS](https://stackoverflow.com/questions/50538586/install-specific-version-of-ansible-2-3-1-0-on-ubuntu-18-04-lts)
 * [Using ssh instead of sftp (Error: sftp transfer mechanism failed)](https://stackoverflow.com/questions/23899028/ansible-failed-to-transfer-file-to-command) 
+* [Intro to Playbooks](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html)
+* [Working With Playbooks](https://docs.ansible.com/ansible/latest/user_guide/playbooks.html)
+* [ansible-playbook command reference](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html)
+* [Ansible Playbook Examples](https://github.com/ansible/ansible-examples)

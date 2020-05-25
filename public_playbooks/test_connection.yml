@@ -1,0 +1,5 @@
+---
+- hosts: "{{ target_hosts | default('all') }}"
+  tasks:
+    - name: test connection
+      ping:

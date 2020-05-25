@@ -7,6 +7,9 @@ services:
         build: ./ansible
         environment:
             - MAX_ANSIBLE_NODES=${MAX_ANSIBLE_NODES}
+        volumes:
+            - ./public_playbooks:/public_playbooks
+            - ./private_playbooks:/private_playbooks
         depends_on:
           - ubuntussh
 
